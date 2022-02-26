@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import BookingBike from './pages/BookingBike';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
