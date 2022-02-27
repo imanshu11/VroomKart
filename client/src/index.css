@@ -39,6 +39,7 @@ p{
 
 .btn1{
   box-shadow: none !important;
+  border-radius: 0.5em !important;
   background-color: orangered !important;
   color: white !important;
   border: 1px solid orangered !important;
@@ -54,8 +55,36 @@ p{
   background-color: rgb(56, 56, 56);
 }
 
-.bikeimg{
-  height: 150px;
-  width: auto;
+
+/* UI PURPOSE NO FUNCTIONALITY REALTAED */
+
+.bike{
   border-radius: 5px;
+  margin-top: 100px;
+  height: 200px;  /* to change theback shadow height */
+  width: auto;
+  transition: 0.3s;
 }
+
+.bike:hover{
+  height: 220px;
+}
+
+ /* .bike:hover > .bike-content{
+   opacity: 1;
+   transform: translateY(-30px);
+} */
+
+.bikeimg{
+  height: 180px;
+  width: 100%; 
+  border-radius: 5px;
+  transform: translateY(-60px);
+}
+
+.bike-content{
+  transform: translateY(-60px);
+  opacity: 1; 
+}
+
+

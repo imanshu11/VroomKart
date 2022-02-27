@@ -23,7 +23,7 @@ function Home() {
 
           {bikes.map(bike=>{
             return <Col lg={5} sm={24} xs={24}>
-              <div className="bike p-3 bs1 mt-3">
+              <div className="bike p-3 bs1">
                  <img src={bike.image} className="bikeimg" />
               </div>
 
