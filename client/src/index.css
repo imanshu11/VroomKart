@@ -88,3 +88,44 @@ p{
 }
 
 
+.login{
+  background-color:black;
+  min-height: 100vh;
+
+}
+
+.login label, .login h1{
+  color: white !important;
+  opacity: 0.6;
+}
+
+.login-form{
+  background-color: #1F1F1F;
+  border-radius: 50px;
+  
+}
+
+.login-form input{
+  background-color: #333333 !important;
+  border: none !important;
+  color: white;
+  opacity: 1;
+}
+
+.login-logo{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80%;
+  bottom: 50%;
+  transform: translateY(-50%, -50%);
+  font-size: 50px;
+  opacity: 0.5 !important;
+}
+
+/* image of loginpage */
+.login-image{
+  width: 100%;
+  height:auto;
+  opacity: 0.3;
+}
