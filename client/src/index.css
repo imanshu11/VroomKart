@@ -43,11 +43,17 @@ p{
   background-color: orangered !important;
   color: white !important;
   border: 1px solid orangered !important;
-  padding: 4px !important;
+  padding: 4px 15px !important;
+  outline: none !important;
+}
+
+/* when we click on button */
+.btn1:focus{
+  border: none;
 }
 
 button{
-  padding: 5px !important;
+  padding: 5px 10px !important;
 }
 
 .header{
