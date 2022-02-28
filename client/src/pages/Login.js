@@ -1,5 +1,6 @@
 import React from 'react'
 import {Row, Col, Form, Input} from 'antd'
+import {Link} from "react-router-dom"
 
 function Login() {
   return (
@@ -26,7 +27,11 @@ function Login() {
               <Input/>
             </Form.Item>
 
-            <button className='btn1'>Login</button>
+            <button className='btn1 mt-1'>Login</button>
+
+            <hr />
+
+            <Link to="/register">Click Here to Register</Link>
 
           </Form>
         </Col>
