@@ -21,7 +21,7 @@ function Register() {
   return (
     <div className='login'>
 
-      <Row gutter={16} className='d-flex align-items-center'>
+      <Row gutter={0} className='d-flex align-items-center'>
 
         <Col lg={16} style={{ position: 'realative' }}>
           <img src="https://images.hdqwalls.com/wallpapers/ducati-custom-cafe-fighter-3i.jpg" className='login-image' />

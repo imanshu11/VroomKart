@@ -19,7 +19,7 @@ function Home() {
 
        {loading == true && (<Spinner />)}
 
-        <Row justify='center' gutter={16} className='mt-5'>
+        <Row justify='center' gutter={0} className='mt-5'>
 
           {bikes.map(bike=>{
             return <Col lg={5} sm={24} xs={24}>
