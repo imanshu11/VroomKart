@@ -31,6 +31,7 @@ function Register() {
 
         <Col lg={16} style={{ position: 'realative' }}>
           <img
+          // for animation of Image 
           data-aos='slide-left'
           data-aos-duration='1500'
            src="https://images.hdqwalls.com/wallpapers/ducati-custom-cafe-fighter-3i.jpg" className='login-image' />

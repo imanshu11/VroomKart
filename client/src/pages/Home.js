@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import DefaultLayout from '../components/DefaultLayout'
 import { getAllBikes } from '../redux/actions/bikesActions'
 import { Button, Row, Col } from 'antd';
+import {Link} from 'react-router-dom';
 import Spinner from '../components/Spinner';
 
 function Home() {
@@ -35,7 +36,7 @@ function Home() {
                 </div>
 
                 <div>
-                  <button className="btn1 mr-2">Book Now</button>
+                  <button className="btn1 mr-2"><Link to={`/booking/${bike._id}`}>Book Now</Link></button>
                 </div>
 
               </div>
