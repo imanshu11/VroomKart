@@ -26,7 +26,7 @@ function Login() {
       
       <Row gutter={0} className='d-flex align-items-center'>
 
-        <Col lg={15} style={{position: 'realative'}}>
+        <Col lg={15} style={{position: 'relative'}}>
           <img
            data-aos='slide-right'
            data-aos-duration='1500'
