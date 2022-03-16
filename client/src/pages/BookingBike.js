@@ -28,7 +28,7 @@ function BookingBike({ match }) {
     else {
       setbike(bikes.find(o => o._id == match.params.bikeid))
     }
-  }, [bikes])
+  }, [bikes]);
 
   
   
@@ -57,11 +57,11 @@ function BookingBike({ match }) {
 
     const reqObj = {
 
-      user : JSON.parse(localStorage.grtItem('user'))._id,
+      user : JSON.parse(localStorage.getItem('user'))._id,
       bike : bike._id,
       totalHours,
       totalAmount,
-      driverRequire : driver,
+      driverRequired : driver,
       bookedTimeSlots : {
         from,
         to
