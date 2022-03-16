@@ -30,13 +30,12 @@ function BookingBike({ match }) {
     }
   }, [bikes]);
 
-  
-  
+
+
   useEffect(() => {
 
     setTotalAmount((totalHours * bike.rentPerHour))
-    if(driver)
-    {
+    if (driver) {
       setTotalAmount(totalAmount + (30 * totalHours))
     }
 
@@ -57,12 +56,12 @@ function BookingBike({ match }) {
 
     const reqObj = {
 
-      user : JSON.parse(localStorage.getItem('user'))._id,
-      bike : bike._id,
+      user: JSON.parse(localStorage.getItem('user'))._id,
+      bike: bike._id,
       totalHours,
       totalAmount,
-      driverRequired : driver,
-      bookedTimeSlots : {
+      driverRequired: driver,
+      bookedTimeSlots: {
         from,
         to
       }
@@ -87,31 +86,34 @@ function BookingBike({ match }) {
             <p>{bike.rentPerHour} Rent Per Hour /-</p>
             <p>Fuel Type : {bike.fuelType}</p>
             <p>Mileage : {bike.mileage}</p>
+            <Divider type='horizontal'>Select Time Slots</Divider>
+            <RangePicker showTime={{ format: 'HH:mm' }} format='MMM DD yyyy HH:mm' onChange={selectTimeSlots} />
           </div>
 
-          <Divider type='horizontal'>Select Time Slots</Divider>
+          
           
 
-          <div className='text-right'>
-          <RangePicker showTime={{ format: 'HH:mm' }} format='MMM DD yyyy HH:mm' onChange={selectTimeSlots} />
-            <p>Total Hours : <b>{totalHours}</b></p>
-            <p>Rent PerHour : <b>{bike.rentPerHour}</b></p>
-            
-            <Checkbox onChange={(e) => {
-              if(e.target.checked)
-              {
-                setdriver(true);
-              }
-              else
-              {
-                setdriver(false);
-              }
-            }}>Driver Required</Checkbox>
+          {from && to && (
+            <div className='text-right'>
+              
+              <p>Total Hours : <b>{totalHours}</b></p>
+              <p>Rent PerHour : <b>{bike.rentPerHour}</b></p>
 
-            <h3>TotalAmount : {totalAmount}</h3>
+              <Checkbox onChange={(e) => {
+                if (e.target.checked) {
+                  setdriver(true);
+                }
+                else {
+                  setdriver(false);
+                }
+              }}>Driver Required</Checkbox>
 
-            <button className='btn1'onClick={bookNow}>Book Now</button>
-          </div>
+              <h3>TotalAmount : {totalAmount}</h3>
+
+              <button className='btn1' onClick={bookNow}>Book Now</button>
+            </div>
+          )}
+
         </Col>
 
       </Row>
