@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row, Divider, DatePicker, Checkbox } from 'antd'
+import { Col, Row, Divider, DatePicker, Checkbox, Modal } from 'antd'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import DefaultLayout from '../components/DefaultLayout'
@@ -20,6 +20,7 @@ function BookingBike({ match }) {
   const [totalHours, setTotalHours] = useState(0)
   const [driver, setdriver] = useState(false)
   const [totalAmount, setTotalAmount] = useState(0)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     if (bikes.length == 0) {
@@ -88,14 +89,16 @@ function BookingBike({ match }) {
             <p>Mileage : {bike.mileage}</p>
             <Divider type='horizontal'>Select Time Slots</Divider>
             <RangePicker showTime={{ format: 'HH:mm' }} format='MMM DD yyyy HH:mm' onChange={selectTimeSlots} />
+            <br />
+            <br />
+            <button className='btn1 mt-2' onClick={() => { setShowModal(true) }}>See Booked Slots</button>
           </div>
 
-          
-          
+
 
           {from && to && (
             <div className='text-right'>
-              
+
               <p>Total Hours : <b>{totalHours}</b></p>
               <p>Rent PerHour : <b>{bike.rentPerHour}</b></p>
 
@@ -116,7 +119,37 @@ function BookingBike({ match }) {
 
         </Col>
 
+
+        {bike.name && (
+
+          <Modal visible={showModal} closable={false} footer={false} title='Booked time slots'>
+
+            {bikes.length && (<div className='p-2'>
+
+              {bike.bookedTimeSlots.map(slot => {
+
+                return <button className='btn1 mt-2'>{slot.from} - {slot.to}</button>
+
+
+              })}
+
+              <div className='text-right'>
+
+                <button className='btn1' onClick={() => { setShowModal(false) }}>CLOSE</button>
+
+              </div>
+
+            </div>)}
+
+          </Modal>
+
+
+        )}
+
       </Row>
+
+
+
     </DefaultLayout>
   )
 }
