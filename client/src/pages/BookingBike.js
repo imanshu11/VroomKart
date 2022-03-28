@@ -7,6 +7,7 @@ import Spinner from '../components/Spinner'
 import { getAllBikes } from '../redux/actions/bikesActions'
 import moment from 'moment'
 import { bookBike } from '../redux/actions/bookingActions'
+import StripeCheckout from 'react-stripe-checkout';
 
 const { RangePicker } = DatePicker
 function BookingBike({ match }) {
@@ -55,8 +56,13 @@ function BookingBike({ match }) {
 
   function bookNow() {
 
+    
+  }
+
+  function onToken(token){
     const reqObj = {
 
+      token,
       user: JSON.parse(localStorage.getItem('user'))._id,
       bike: bike._id,
       totalHours,
@@ -71,7 +77,7 @@ function BookingBike({ match }) {
     }
 
     dispatch(bookBike(reqObj))
-  }
+  } 
 
   return (
     <DefaultLayout>
@@ -113,8 +119,21 @@ function BookingBike({ match }) {
 
               <h3>TotalAmount : {totalAmount}</h3>
 
-              <button className='btn1' onClick={bookNow}>Book Now</button>
-            </div>
+              <StripeCheckout
+                shippingAddress
+                token={onToken}
+                currency='inr'
+                amount={totalAmount * 100}
+                stripeKey="pk_test_51KhdgXSJaGUzL2E3YkM1xE9JDWMbvddiRI4hsJRcr8RRFXP8bfaJqkODAlzKRnAIMSa8mhuUBtuJ7wHCHGecFQAM0077TkvylI">
+                
+                <button className='btn1'>
+                  Book Now
+                </button>
+                
+                </StripeCheckout>
+
+              </div>
+           
           )}
 
         </Col>
