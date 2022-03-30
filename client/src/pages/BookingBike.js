@@ -54,10 +54,7 @@ function BookingBike({ match }) {
   }
 
 
-  function bookNow() {
 
-    
-  }
 
   function onToken(token){
     const reqObj = {
