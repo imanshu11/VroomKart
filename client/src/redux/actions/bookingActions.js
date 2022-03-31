@@ -11,6 +11,11 @@ export const bookBike = (reqObj) => async (dispatch) => {
 
         dispatch({ type: 'LOADING', payload: false });
         message.success('Your Bike Booked Successfully');
+        setTimeout(() => {
+            window.location.href='/userbookings'
+        }, 500);
+
+        
     } catch (error) {
         console.log(error);
         dispatch({ type: 'LOADING', payload: false });

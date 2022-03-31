@@ -1,5 +1,6 @@
 import React from 'react'
 import { Menu, Dropdown, Button, Row, Col } from 'antd';
+import { Link } from 'react-router-dom'
 
 function DefaultLayout(props) {
 
@@ -7,12 +8,12 @@ function DefaultLayout(props) {
   const menu = (
     <Menu>
       <Menu.Item>
-        <a href="https://www.antgroup.com">
+        <a href="/">
           Home
         </a>
       </Menu.Item>
       <Menu.Item>
-        <a href="https://www.antgroup.com">
+        <a href="/userbookings">
           Bookings
         </a>
       </Menu.Item>
@@ -37,7 +38,7 @@ function DefaultLayout(props) {
 
         <div className="d-flex justify-content-between">
 
-          <h1>RideBikes</h1>
+          <h1><b><Link to='/' style={{ color: 'orangered' }}>RideBikes</Link></b></h1>
 
 
           <Dropdown overlay={menu} placement="bottomCenter" arrow>
