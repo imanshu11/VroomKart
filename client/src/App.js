@@ -6,7 +6,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import BookingBike from './pages/BookingBike';
 import UserBookings from './pages/UserBookings';
+import AddBike from './pages/AddBike';
 import 'antd/dist/antd.css';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route path='/register' exact component={Register} />
           <ProtectedRoute path='/booking/:bikeid' exact component={BookingBike} />
           <ProtectedRoute path='/userbookings' exact component={UserBookings} />
+          <ProtectedRoute path='/addbike' exact component={AddBike} />
           
       </BrowserRouter>
 

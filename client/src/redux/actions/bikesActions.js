@@ -1,3 +1,4 @@
+import { message } from 'antd';
 import axios from 'axios';
 
 
@@ -13,5 +14,25 @@ export const getAllBikes = () => async dispatch =>{
         console.log(error)
         dispatch({type: 'LOADING', payload:false})
     }
+
+}
+
+export const addBike = (reqObj) => async dispatch => {
+
+    dispatch({type: 'LOADING', payload:true})
+
+    try {
+        await axios.post('/api/bikes/addbike', reqObj)
+        
+        dispatch({type: 'LOADING', payload:false})
+        message.success('New Bike Added Successfully')
+        setTimeout(() => {
+            window.location.href='/'
+        }, 500);
+    } catch (error) {
+        console.log(error)
+        dispatch({type: 'LOADING', payload:false})
+    }
+
 
 }
