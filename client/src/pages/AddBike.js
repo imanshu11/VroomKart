@@ -42,7 +42,7 @@ function AddBike() {
             <Form.Item name='mileage' label='Mileage' rules={[{ required: true }]}>
               <Input />
             </Form.Item>
-            <Form.Item name='fueltype' label='Fuel Type' rules={[{ required: true }]}>
+            <Form.Item name='fuelType' label='Fuel Type' rules={[{ required: true }]}>
               <Input />
             </Form.Item>
 

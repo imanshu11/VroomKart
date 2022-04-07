@@ -96,7 +96,7 @@ function Home() {
 
               <div className="bike-content d-flex align-items-center justify-content-between">
 
-                <div>
+                <div className='text-left pl-2'>
                   <p>{bike.name}</p>
                   <p>{bike.rentPerHour} Rent Per Hour /-</p>
                 </div>
