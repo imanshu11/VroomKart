@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import DefaultLayout from '../components/DefaultLayout'
 import { getAllBikes } from '../redux/actions/bikesActions'
-import {Button, Row, Col, Divider, DatePicker, CheckBox} from 'antd'
+import {Button, Row, Col, Divider, DatePicker, CheckBox, Edit} from 'antd'
 import {Link} from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import moment from 'moment'
@@ -53,7 +53,7 @@ function AdminHome() {
                 </div>
 
                 <div className='mr-4'>
-                  <EditOutlined className='mr-3' style={{color: 'green', cursor: 'pointer'}} />
+                  <Link to={`/editbike/${bike._id}`}><EditOutlined className='mr-3' style={{color: 'green', cursor: 'pointer'}} /></Link>
                   <DeleteOutlined style={{color: 'red', cursor: 'pointer'}} />
                 </div>
 
