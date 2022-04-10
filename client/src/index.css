@@ -154,6 +154,13 @@ button{
   width: auto;
 }
 
+
+svg{
+  height: 20px !important;
+  width: 20px !important;
+}
+
+
 /* image of loginpage */
 .login-image{
   width: 100%;

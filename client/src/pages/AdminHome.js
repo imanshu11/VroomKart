@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import { React, useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import DefaultLayout from '../components/DefaultLayout'
 import { getAllBikes } from '../redux/actions/bikesActions'
@@ -6,8 +6,11 @@ import {Button, Row, Col, Divider, DatePicker, CheckBox} from 'antd'
 import {Link} from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import moment from 'moment'
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 const {RangePicker} = DatePicker
+
+
 
 function AdminHome() {
   const {bikes} = useSelector(state=>state.bikesReducer)
@@ -49,8 +52,9 @@ function AdminHome() {
                   <p>{bike.rentPerHour} Rent Per Hour /-</p>
                 </div>
 
-                <div>
-                  <button className="btn1 mr-2"><Link to={`/booking/${bike._id}`} style={{ color: 'white' }}>Book Now</Link></button>
+                <div className='mr-4'>
+                  <EditOutlined className='mr-3' style={{color: 'green', cursor: 'pointer'}} />
+                  <DeleteOutlined style={{color: 'red', cursor: 'pointer'}} />
                 </div>
 
               </div>
