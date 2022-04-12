@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import DefaultLayout from '../components/DefaultLayout'
 import Spinner from '../components/Spinner'
-import { addBike, getAllBikes } from '../redux/actions/bikesActions'
+import { addBike, editBike, getAllBikes } from '../redux/actions/bikesActions'
 
 function EditBike({match}) {
 
@@ -27,9 +27,9 @@ function EditBike({match}) {
 
   function onFinish(values) {
 
-    values.bookedTimeSlots=[]
+    values._id = bike._id
 
-    dispatch(addBike(values))
+    dispatch(editBike(values))
     console.log(values)
   }
   return (

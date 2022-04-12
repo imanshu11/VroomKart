@@ -18,8 +18,8 @@ function DefaultLayout(props) {
         </a>
       </Menu.Item>
       <Menu.Item>
-        <a href="https://www.aliyun.com">
-          Profile
+        <a href="/admin">
+          Admin
         </a>
       </Menu.Item>
       <Menu.Item onClick={() => {

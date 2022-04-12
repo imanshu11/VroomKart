@@ -36,3 +36,24 @@ export const addBike = (reqObj) => async dispatch => {
 
 
 }
+
+
+export const editBike = (reqObj) => async dispatch => {
+
+    dispatch({type: 'LOADING', payload:true})
+
+    try {
+        await axios.post('/api/bikes/editbike', reqObj)
+        
+        dispatch({type: 'LOADING', payload:false})
+        message.success('Bike Details Updated Successfully')
+        setTimeout(() => {
+            window.location.href='/'
+        }, 500);
+    } catch (error) {
+        console.log(error)
+        dispatch({type: 'LOADING', payload:false})
+    }
+
+
+}
