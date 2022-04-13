@@ -1,12 +1,13 @@
 import { React, useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import DefaultLayout from '../components/DefaultLayout'
-import { getAllBikes } from '../redux/actions/bikesActions'
+import { deleteBike, getAllBikes } from '../redux/actions/bikesActions'
 import { Button, Row, Col, Divider, DatePicker, CheckBox, Edit } from 'antd'
 import { Link } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import moment from 'moment'
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { Popconfirm, message } from 'antd';
 
 const { RangePicker } = DatePicker
 
@@ -62,7 +63,17 @@ function AdminHome() {
 
               <div className='mr-4'>
                 <Link to={`/editbike/${bike._id}`}><EditOutlined className='mr-3' style={{ color: 'green', cursor: 'pointer' }} /></Link>
-                <DeleteOutlined style={{ color: 'red', cursor: 'pointer' }} />
+
+                <Popconfirm
+                  title="Are you sure to delete this bike?"
+                  onConfirm={()=>{dispatch(deleteBike({bikeid : bike._id}))}}
+                  
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <DeleteOutlined style={{ color: 'red', cursor: 'pointer' }} />
+                </Popconfirm>
+
               </div>
 
             </div>
