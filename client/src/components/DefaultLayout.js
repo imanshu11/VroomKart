@@ -52,6 +52,13 @@ function DefaultLayout(props) {
         {props.children}
       </div>
 
+      <div className="footer text-center">
+      <hr />
+        <p>Designed and Developed By</p>
+        <p>ANSHU</p>
+
+      </div>
+
     </div>
   )
 }

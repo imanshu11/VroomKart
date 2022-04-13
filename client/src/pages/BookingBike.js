@@ -9,6 +9,9 @@ import moment from 'moment'
 import { bookBike } from '../redux/actions/bookingActions'
 import StripeCheckout from 'react-stripe-checkout';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const { RangePicker } = DatePicker
 function BookingBike({ match }) {
 
@@ -81,8 +84,8 @@ function BookingBike({ match }) {
       {loading && (<Spinner />)}
       <Row justify='center' className='d-flex align-items-center' style={{ minHeight: '90vh' }}>
 
-        <Col lg={10} sm={24} xs={24}>
-          <img src={bike.image} className="bikeimg2 bs1" />
+        <Col lg={10} sm={24} xs={24} className='p-3'>
+          <img src={bike.image} className="bikeimg2 bs1 w-100" data-aos='flip-left' data-aos-duration='1500' />
         </Col>
         <Col lg={10} sm={24} xs={24}>
           <Divider type='horizontal'>Bike Info</Divider>
