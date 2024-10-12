@@ -56,4 +56,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 npm run build fails to minify
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
->>DB Connection to replicate the data from mongodb give URL link with database name otherwise by default it will be replicated in test db. For ex:- mongodb+srv://anshudeo2000:<Password>@cluster0.ueerf.mongodb.net/<database name> in db.js file
+>>DB Connection to replicate the data from mongodb give URL link with database name otherwise by default it will be replicated in test db.
+>>For ex:- mongodb+srv://anshudeo2000:<Password>@cluster0.ueerf.mongodb.net/<database name> in db.js file
